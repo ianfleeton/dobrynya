@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'dobrynya/runner'
+
+runner = Dobrynya::Runner.new(ARGV)
+runner.run
