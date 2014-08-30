@@ -11,6 +11,8 @@ module Dobrynya
         e.run
         File.exist?(dir).must_be :==, true
         File.exist?(File.join([dir, 'orders'])).must_be :==, true
+        File.exist?(File.join([dir, 'payments'])).must_be :==, true
+        File.exist?(File.join([dir, 'products'])).must_be :==, true
         FileUtils.rm_rf(dir)
       end
     end
