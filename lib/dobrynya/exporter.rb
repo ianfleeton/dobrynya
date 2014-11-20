@@ -12,7 +12,7 @@ module Dobrynya
     def run
       mkdirs
 
-      background_process(2, ['orders', 'payments', 'products', 'users']) do |collection|
+      background_process(2, ['images', 'orders', 'payments', 'products', 'users']) do |collection|
         begin
           export_collection(collection)
         rescue => e
@@ -30,7 +30,7 @@ module Dobrynya
 
     def mkdirs
       FileUtils.mkdir(opts[:export])
-      ['orders', 'payments', 'products', 'users'].each do |subdir|
+      ['images', 'orders', 'payments', 'products', 'users'].each do |subdir|
         FileUtils.mkdir(File.join([opts[:export], subdir]))
       end
     end

@@ -10,7 +10,7 @@ module Dobrynya
         e = Exporter.new(export: dir, base: 'http://example.org')
         e.run
         File.exist?(dir).must_be :==, true
-        ['orders', 'payments', 'products', 'users'].each do |subdir|
+        ['images', 'orders', 'payments', 'products', 'users'].each do |subdir|
           File.exist?(File.join([dir, subdir])).must_be :==, true
         end
         FileUtils.rm_rf(dir)
